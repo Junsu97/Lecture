@@ -1,15 +1,15 @@
-package controller;
+package kopo.poly.controller;
 
-import dto.UserInfoDTO;
+import kopo.poly.dto.UserInfoDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import service.IUserInfoService;
-import util.CmmUtil;
-import util.EncryptUtil;
+import kopo.poly.service.IUserInfoService;
+import kopo.poly.util.CmmUtil;
+import kopo.poly.util.EncryptUtil;
 
 import javax.servlet.http.HttpServletRequest;
 

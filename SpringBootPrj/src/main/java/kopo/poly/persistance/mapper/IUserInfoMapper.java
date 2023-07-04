@@ -1,6 +1,6 @@
-package persistance.mapper;
+package kopo.poly.persistance.mapper;
 
-import dto.UserInfoDTO;
+import kopo.poly.dto.UserInfoDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

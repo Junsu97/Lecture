@@ -1,16 +1,17 @@
-package service.impl;
+package kopo.poly.service.impl;
 
-import dto.UserInfoDTO;
+import kopo.poly.dto.UserInfoDTO;
+import kopo.poly.service.IUserInfoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import service.IUserInfoService;
+import kopo.poly.persistance.mapper.IUserInfoMapper;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserInfoService implements IUserInfoService {
-    private final IUserInfoService userInfoService;
+    private final IUserInfoMapper userInfoMapper;
     @Override
     public UserInfoDTO getUserIdExists(UserInfoDTO pDTO) throws Exception {
         return null;
@@ -28,7 +29,7 @@ public class UserInfoService implements IUserInfoService {
         // 회원가입 성공: 1, 기타 에러 발생 : 0
         int res = 0;
 
-        res = userInfoService.insertUserInfo(pDTO);
+        res = userInfoMapper.insertUserInfo(pDTO);
         log.info(this.getClass().getName() + ".insertUserInfo End!");
         return res;
     }

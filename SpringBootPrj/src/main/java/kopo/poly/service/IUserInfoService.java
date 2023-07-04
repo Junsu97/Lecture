@@ -1,6 +1,6 @@
-package service;
+package kopo.poly.service;
 
-import dto.UserInfoDTO;
+import kopo.poly.dto.UserInfoDTO;
 
 
 public interface IUserInfoService {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "//mybatis.org//DTO Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- JAVA와 연결혈 Mapper 파일 설정-->
 <mapper namespace="kopo.poly.persistance.mapper.IUserInfoMapper">
     <!--회원 가입하기(회원정보 등록하기)-->
@@ -7,13 +7,13 @@
         INSERT INTO USER_INFO
         (USER_ID,
          USER_NAME,
-         PASSWEORD,
+         PASSWORD,
          EMAIL,
          ADDR1,
          ADDR2,
          REG_ID,
          REG_DT,
-         GHG_ID,
+         CHG_ID,
          CHG_DT)
         VALUES (#{user_id},
                #{user_name},
