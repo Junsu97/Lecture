@@ -1,4 +1,4 @@
-package controller;
+package kopo.poly.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -10,7 +10,11 @@ public class MainController {
 
     @GetMapping("/main")
     public String main() throws Exception{
-        log.info(this.getClass().getName() + ".main 페이지 보여주는 함수실행");
         return "/main";
+    }
+
+    @GetMapping("/test")
+    public String test() throws Exception{
+        return "/test";
     }
 }
