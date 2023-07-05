@@ -187,7 +187,7 @@ public class UserInfoController {
 
                 // 로그인 성공 메세지와 이동할 경로의 url
                 msg = "로그인이 성공했습니다. \n" + rDTO.getUser_name()+"님 환영합니다.";
-                url = "/main";
+                url = "/notice/noticeList";
             }else{
                 msg = "로그인 실패 \n회원가입 페이지로 이동합니다.";
                 url = "/user/userRegForm";

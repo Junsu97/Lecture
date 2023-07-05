@@ -17,8 +17,5 @@ public class MainController {
     public String test() throws Exception{
         return "/test";
     }
-    @GetMapping( "/notice/noticeList")
-    public String noticeList(){
-        return "/notice/noticeList";
-    }
+
 }
