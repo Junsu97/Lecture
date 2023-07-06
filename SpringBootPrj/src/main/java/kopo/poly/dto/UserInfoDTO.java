@@ -16,4 +16,7 @@ public class UserInfoDTO {
     private String reg_dt;
     private String chg_id;
     private String chg_dt;
+
+    private int authNumber;
+    private String exists_yn;
 }
