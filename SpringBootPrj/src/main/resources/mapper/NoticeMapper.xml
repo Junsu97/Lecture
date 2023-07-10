@@ -10,7 +10,7 @@
         SELECT NOTICE_SEQ, TITLE, NOTICE_YN, READ_CNT, USER_ID,
                TO_CHAR(REG_DT, 'YYYY-MM-DD') AS REG_DT
         FROM NOTICE
-        ORDER BY NOTICE_YN DESC
+        ORDER BY NOTICE_YN, REG_DT DESC
     </select>
 <!--게시판 등록 쿼리-->
     <insert id="insertNoticeInfo" parameterType="NoticeDTO">
