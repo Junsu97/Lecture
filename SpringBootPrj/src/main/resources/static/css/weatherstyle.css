@@ -1,21 +1,21 @@
-*{
-    font-family: 'Noto Sans KR', sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    box-sizing: border-box;
-}
+/**{*/
+/*    font-family: 'Noto Sans KR', sans-serif;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    border: 0;*/
+/*    outline: none;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
-body{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #06283D;
-}
+/*body{*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    background: #06283D;*/
+/*}*/
 
-.container{
+.weather-container{
     position: relative;
     width: 400px;
     height: 105px;
@@ -37,7 +37,7 @@ body{
 
 .search-box input{
     color: #06283D;
-    width: 80%;
+    width: 600px;
     font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
@@ -75,6 +75,7 @@ body{
 
 .weather-box{
     text-align: center;
+    z-index: 100;
 }
 
 .weather-box img{
@@ -141,7 +142,7 @@ body{
     font-weight: 500;
 }
 
-.weather-details p{
+.details p{
      color: #06283D;
     font-size: 14px;
     font-weight: 500;
