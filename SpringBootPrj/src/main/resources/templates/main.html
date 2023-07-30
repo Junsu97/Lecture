@@ -22,8 +22,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
                         <li class="nav-item" style="margin-left: 450%;"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item" style="margin-left: 30px;"><a class="nav-link" href="#!">Covid News</a></li>
-                        <li class="nav-item" style="margin-left: 30px;"><a class="nav-link" href="#!">Notice</a></li>
+                        <li class="nav-item" style="margin-left: 45px;"><a class="nav-link" href="/news">News</a></li>
+                        <li class="nav-item" style="margin-left: 45px;"><a class="nav-link" href="/notice/noticeList">Notice</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,61 +80,97 @@
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><img src="/img/cnt_confirmations.png" style="width: 80px; height: 80px"
-                                                                                                                 alt=""></div>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><img src="/img/cnt_confirmations.png" style="width: 80px; height: 80px" alt=""></div>
                                 <h2 class="fs-4 fw-bold">일일 확진</h2>
                                 <p class="mb-0" th:text="${covidDTO.getCnt_confirmations()}"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-light border-0 h-100">
-                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                                    <img src="/img/cnt_confirmations.png" style="width: 60px; height: 60px;" alt="">
-                                    <img src="/img/100k.png" style="width: 30px; height: 30px;" alt=""></div>
                                 <h2 class="fs-4 fw-bold">인구 10만명당 확진</h2>
                                 <p class="mb-0" th:text="${covidDTO.getRate_confirmations()}"></p>
                             </div>
                         </div>
                     </div>
+<!--                    <div class="col-lg-6 col-xxl-4 mb-5">-->
+<!--                        <div class="card bg-light border-0 h-100">-->
+<!--                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+<!--                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">-->
+<!--                                    <img src="/img/cnt_confirmations.png" style="width: 60px; height: 60px;" alt="">-->
+<!--                                    <img src="/img/100k.png" style="width: 30px; height: 30px;" alt=""></div>-->
+<!--                                <h2 class="fs-4 fw-bold">인구 10만명당 확진</h2>-->
+<!--                                <p class="mb-0" th:text="${covidDTO.getRate_confirmations()}"></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
                                     <img src="/img/cnt_deaths.png" style="height: 80px; width: 80px;" alt=""></div>
                                 <h2 class="fs-4 fw-bold">일일 사망</h2>
-                                <p class="mb-0" th:text=""></p>
+                                <p class="mb-0" th:text="${covidDTO.getCnt_deaths()}"></p>
+                                <h2 class="fs-4 fw-bold">인구 10만명당 사망</h2>
+                                <p class="mb-0" th:text="${covidDTO.getRate_deaths()}"></p>
                             </div>
                         </div>
                     </div>
+<!--                    <div class="col-lg-6 col-xxl-4 mb-5">-->
+<!--                        <div class="card bg-light border-0 h-100">-->
+<!--                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+<!--                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">-->
+<!--                                    <img src="/img/cnt_deaths.png" style="width: 60px; height: 60px" alt=""></div>-->
+<!--                                    <img src="/img/100k.png" alt="">-->
+<!--                                    <h2 class="fs-4 fw-bold">인구 10만명당 사망</h2>-->
+<!--                                <p class="mb-0" th:text="${covidDTO.getRate_deaths()}"></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i></div>
-                                <h2 class="fs-4 fw-bold">Feature boxes</h2>
-                                <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <img src="/img/cnt_hospitalizations.png" style="height: 80px; width: 80px;" alt="">
+                                </div>
+                                <h2 class="fs-4 fw-bold">일일 신규입원</h2>
+                                <p class="mb-0" th:text="${covidDTO.getCnt_hospitalizations()}"></p>
+                                <h2 class="fs-4 fw-bold">인구 10만명당 신규입원</h2>
+                                <p class="mb-0" th:text="${covidDTO.getRate_hospitalizations()}"></p>
                             </div>
                         </div>
                     </div>
+<!--                    <div class="col-lg-6 col-xxl-4 mb-5">-->
+<!--                        <div class="card bg-light border-0 h-100">-->
+<!--                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+<!--                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">-->
+<!--                                    <img src="/img/cnt_hospitalizations.png" style="width: 60px; height: 60px" alt="">-->
+<!--                                    <img src="/img/100k.png" alt="">-->
+<!--                                </div>-->
+<!--                                <h2 class="fs-4 fw-bold">인구 10만명당 신규입원</h2>-->
+<!--                                 <p class="mb-0" th:text="${covidDTO.getRate_hospitalizations()}"></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-code"></i></div>
-                                <h2 class="fs-4 fw-bold">Simple clean code</h2>
-                                <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                    <img src="/img/cnt_severe_symptoms.png" style="height: 80px; width: 80px;" alt="">
+                                </div>
+                                <h2 class="fs-4 fw-bold">일일 재원 위중증</h2>
+                                <p class="mb-0" th:text="${covidDTO.getCnt_severe_symptoms()}"></p>
+                                <h2 class="fs-4 fw-bold"인구 10만명당 재원 위중증></h2>
+                                <p class="mb-0" th:text="${covidDTO.getCnt_severe_symptoms()}"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-light border-0 h-100">
-                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-patch-check"></i></div>
-                                <h2 class="fs-4 fw-bold">A name you trust</h2>
-                                <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="col-lg-6 col-xxl-4 mb-5">-->
+<!--                        <div class="card bg-light border-0 h-100">-->
+<!--                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+<!--                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">-->
+<!--                                    <img src="/img/cnt_severe_symptoms.png" alt="">-->
+<!--                                </div>-->
+<!--                                <h2 class="fs-4 fw-bold"인구 10만명당 재원 위중증</h2>-->
+<!--                                <p class="mb-0" th:text="${covidDTO.getCnt_severe_symptoms()}"></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
         </section>
