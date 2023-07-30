@@ -58,7 +58,7 @@ public class CovidService implements ICovidService {
 
         List<CovidDTO> covidDTOList = new ObjectMapper().convertValue(response.getBody().getResponse().get("result"), new TypeReference<List<CovidDTO>>() {
         });
-
+        CovidDTO result =  covidDTOList.get(0);
 
         log.info(this.getClass().getName()+"코로나 확진자 정보 가져오기 종료!");
         return covidDTOList;
