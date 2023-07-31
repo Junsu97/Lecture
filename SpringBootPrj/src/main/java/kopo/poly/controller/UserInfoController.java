@@ -22,13 +22,16 @@ import java.util.Optional;
 public class UserInfoController {
     private final IUserInfoService userInfoService;
 
+/*************************************************************************************************************************************/
+
+
     // 회원가입 화면으로 이동
     @GetMapping(value = "/user/userRegForm")
     public String userRegForm(){
         log.info(this.getClass().getName() + ".user/userRegForm");
         return "/user/userRegForm";
     }
-    
+
     // 회원가입 로직 처리
     /* ServletRequest -> 클라이언트의 요청 정보를 서블릿으로 넘겨주기 위한 객체이다.
         즉, 요청에 대한 정보를 가진 객체  -> 값을 가져오는 
@@ -59,8 +62,6 @@ public class UserInfoController {
             String user_name = CmmUtil.nvl(request.getParameter("user_name")); // 이름
             String password = CmmUtil.nvl(request.getParameter("password")); // 비밀번호
             String email = CmmUtil.nvl(request.getParameter("email")); // 이메일
-            String addr1 = CmmUtil.nvl(request.getParameter("addr1")); // 주소
-            String addr2 = CmmUtil.nvl(request.getParameter("addr2")); // 상세주소
 
             /*
             * ######################################################
@@ -71,8 +72,6 @@ public class UserInfoController {
             log.info("user_id : " + user_id);
             log.info("user_name : " + user_name);
             log.info("password : " + password);
-            log.info("addr1 : " + addr1);
-            log.info("addr2 : " + addr2);
             
             /*
             * #######################################################
@@ -93,8 +92,7 @@ public class UserInfoController {
 
             // 민감 정보인 이메일은 AES128-CBC로 암호화
             pDTO.setEmail(EncryptUtil.encAES128CBC(email));
-            pDTO.setAddr1(addr1);
-            pDTO.setAddr2(addr2);
+
 
             /*
             * #####################################################
@@ -189,7 +187,7 @@ public class UserInfoController {
 
                 // 로그인 성공 메세지와 이동할 경로의 url
                 msg = "로그인이 성공했습니다. \n" + rDTO.getUser_name()+"님 환영합니다.";
-                url = "/notice/noticeList";
+                url = "/main";
             }else{
                 msg = "로그인 실패 \n회원가입 페이지로 이동합니다.";
                 url = "/user/userRegForm";
@@ -216,6 +214,7 @@ public class UserInfoController {
     @GetMapping(value = "/user/login")
     public String login(){
         log.info(this.getClass().getName() + ".user/login Start!");
+
         log.info(this.getClass().getName() + ".user/login End!");
         return "/user/login";
     }

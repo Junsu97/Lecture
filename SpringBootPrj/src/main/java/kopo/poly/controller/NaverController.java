@@ -1,8 +1,8 @@
 package kopo.poly.controller;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
-import kopo.poly.dto.UserInfoDTO;
 import kopo.poly.dto.NaverLoginBO;
+import kopo.poly.dto.UserInfoDTO;
 import kopo.poly.service.IUserInfoService;
 import kopo.poly.util.EncryptUtil;
 import lombok.RequiredArgsConstructor;

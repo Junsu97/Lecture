@@ -18,6 +18,7 @@ public class NoticeService implements INoticeService {
     private final INoticeMapper noticeMapper;
     @Override
     public List<NoticeDTO> getNoticeList() throws Exception {
+        log.info("ddd");
         log.info(this.getClass().getName()+".getNoticeList Start!");
         return noticeMapper.getNoticeList();
     }
@@ -43,6 +44,7 @@ public class NoticeService implements INoticeService {
         noticeMapper.insertNoticeInfo(pDTO);
     }
 
+    @Transactional
     @Override
     public void updateNoticeInfo(NoticeDTO pDTO) throws Exception {
         log.info(this.getClass().getName() + ".updateNoticeInfo");
@@ -50,6 +52,7 @@ public class NoticeService implements INoticeService {
         noticeMapper.updateNoticeInfo(pDTO);
     }
 
+    @Transactional
     @Override
     public void deleteNoticeInfo(NoticeDTO pDTO) throws Exception {
         log.info(this.getClass().getName() + ".deleteNoticeInfo Start!");
