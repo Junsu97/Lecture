@@ -94,7 +94,7 @@
             <!--공지글이라면, [공지]표시-->
             <div class="divTableCell" th:if="${dto.notice_yn=='Y'}">공지</div>
             <!--공지글이 아니라면, 글번호 보여주기-->
-            <div class="divTableCell" th:unless="${dto.notice_yn=='Y'}">[[${dto.notice_seq}]]</div>
+            <div class="divTableCell" th:unless="${dto.notice_yn=='N'}">[[${dto.notice_seq}]]</div>
             <div class="divTableCell"
                  th:attr="onclick='doDetail(\'' + ${dto.notice_seq} + '\')'">[[${dto.title}]]
             </div>
