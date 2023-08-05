@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Login - SB Admin</title>
-    <link rel="stylesheet" href="../../static/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <!--네이버 로그인을 위한 src-->
     <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
@@ -81,7 +81,7 @@
                                             <span class="text-dark h4">Covid</span> <span class="text-primary h4">Web</span>
                                         </a>
                                     </div>
-                                    <c:if test="${signIn == null}">
+                                    <if test="${signIn == null}">
                                         <form action="${cpath}/signIn.do" method="post">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="user_id" placeholder="아이디">
@@ -114,7 +114,7 @@
                                                 <button type="button" class="btn text-secondary">아이디/비밀번호 찾기</button>
                                             </div>
                                         </div>
-                                    </c:if>
+                                    </if>
                                 </div>
                             </section>
                         </div>

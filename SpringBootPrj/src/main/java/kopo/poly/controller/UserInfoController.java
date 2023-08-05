@@ -21,7 +21,7 @@ import java.util.Optional;
 @Controller
 public class UserInfoController {
     private final IUserInfoService userInfoService;
-
+    private static boolean loginSuccess = false;
 /*************************************************************************************************************************************/
 
 
@@ -188,9 +188,13 @@ public class UserInfoController {
                 // 로그인 성공 메세지와 이동할 경로의 url
                 msg = "로그인이 성공했습니다. \n" + rDTO.getUser_name()+"님 환영합니다.";
                 url = "/main";
+                loginSuccess = true;
+                session.setAttribute("SS_LOGIN_SUCCEESS", loginSuccess);
             }else{
                 msg = "로그인 실패 \n회원가입 페이지로 이동합니다.";
                 url = "/user/userRegForm";
+                loginSuccess = false;
+                session.setAttribute("SS_LOGIN_SUCCEESS", loginSuccess);
             }
 
 
@@ -199,6 +203,7 @@ public class UserInfoController {
             msg = "시스템 문제로 로그인이 실패했습니다.";
             log.info(e.toString());
             e.printStackTrace();
+            loginSuccess = false;
         }finally {
             model.addAttribute("msg",msg);
             model.addAttribute("url",url);
