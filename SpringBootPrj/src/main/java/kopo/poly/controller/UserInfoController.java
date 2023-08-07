@@ -21,9 +21,12 @@ import java.util.Optional;
 @Controller
 public class UserInfoController {
     private final IUserInfoService userInfoService;
-    private static boolean loginSuccess = false;
+    private boolean loginSuccess = false;
 /*************************************************************************************************************************************/
 
+    public boolean getLoginSuccess(){
+        return loginSuccess;
+    }
 
     // 회원가입 화면으로 이동
     @GetMapping(value = "/user/userRegForm")

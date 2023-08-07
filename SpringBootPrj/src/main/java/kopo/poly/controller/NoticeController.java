@@ -22,6 +22,7 @@ import java.util.Optional;
 public class NoticeController {
 //    // @RequiredArgsConstructor를 통해 메모리에 올라간 서비스 객체를 Controller에서 사용할 수 있게 주입
     private final INoticeService noticeService;
+    private final UserInfoController userInfoController;
 //
 //    /*
 //    * 게시판 리스트 보여주기
@@ -30,24 +31,34 @@ public class NoticeController {
     public String noticeList(ModelMap model) throws Exception{
         String msg = "";
         String url = "";
-
         // 로그 찍기(추후 찍은 로그를 통해 이 함수에 접근했는지 파악하기 용이)
         log.info(this.getClass().getName() + ".noticeList Start!");
 
-        // 공지사항 리스트 조회
-        List<NoticeDTO> rList = noticeService.getNoticeList();
-        if(rList == null) rList = new ArrayList<>();
-        // Java 8부터 제공되는 Optional 활용하여 NPE(Null Pointer Exception)처리
-        // List<NoticeDTO> rList = Optional.ofNullable(noticeService.getNoticeList())
+        if(userInfoController.getLoginSuccess() == false){
+            msg = "로그인이 필요한 서비스입니다.";
+            url = "/user/login";
+            model.addAttribute("msg",msg);
+            model.addAttribute("url",url);
+            // 로그찍기
+            log.info(this.getClass().getName() + ".noticeList End!");
+            log.info("fasle");
+            return "/redirect";
+        }else{
+            // 공지사항 리스트 조회
+            List<NoticeDTO> rList = noticeService.getNoticeList();
+            if(rList == null) rList = new ArrayList<>();
+            // Java 8부터 제공되는 Optional 활용하여 NPE(Null Pointer Exception)처리
+            // List<NoticeDTO> rList = Optional.ofNullable(noticeService.getNoticeList())
 
-        // 조회된 리스트 결과값 넣어주기
-        model.addAttribute("rList", rList);
+            // 조회된 리스트 결과값 넣어주기
+            model.addAttribute("rList", rList);
 
-        // 로그찍기
-        log.info(this.getClass().getName() + ".noticeList End!");
-
-        // 함수 처리가 끝나고 보여줄 html파일명
-        return "/notice/noticeList";
+            // 로그찍기
+            log.info(this.getClass().getName() + ".noticeList End!");
+            log.info("true");
+            // 함수 처리가 끝나고 보여줄 html파일명
+            return "/notice/noticeList";
+        }
     }
 //
 //    /*
